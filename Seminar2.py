@@ -89,7 +89,7 @@
 # соответствующий день. Температуры – целые числа и лежат в
 # диапазоне от –50 до 50
 
-import random                                                       #ЗДЕСЬ ИСПОЛЬЗУЕМ РАНДОМ!!!!!!!!!!!!!
+#import random                                                       #ЗДЕСЬ ИСПОЛЬЗУЕМ РАНДОМ!!!!!!!!!!!!!
 
 # num = int(input("Введите количество дней от 1 до 100: "))
 # temp = 0
@@ -139,3 +139,59 @@ import random                                                       #ЗДЕСЬ 
 # число – это масса соответствующего арбуза
 # Input: 5 -> 5 1 6 5 9
 # Output: 1 9
+
+#from random import randint
+
+# n = int(input("Введите количество арбузов: "))
+# count = 0
+# max_wheight = 0
+# min_wheight = 1000
+
+#Вариант 1
+
+# while count < n:
+#     wheigth = randint(1, 10)
+#     print(wheigth, end=' ')
+#     if wheigth >= max_wheight:
+#         max_wheight = wheigth
+#     elif wheigth < max_wheight:
+#         min_wheight = wheigth
+#     count +=1
+
+# print()
+# print(min_wheight, end=' ')
+# print(max_wheight, end=' ')
+
+# #Вариант 2
+# n = int(input("Введите количество арбузов: "))
+# max_wheight = 0
+# min_wheight = 1000
+
+# for _ in range(n):
+#     wheigth = randint(1, 10)
+#     print(wheigth, end=' ')
+#     if wheigth > max_wheight:
+#         max_wheight = wheigth
+#     elif wheigth < min_wheight:
+#         min_wheight = wheigth
+# print()
+# print(min_wheight, end=' ')
+# print(max_wheight, end=' ')
+
+# #Вариант 3
+# n = int(input("Введите количество арбузов: "))
+# wheigth = randint(0, 100)
+# max_wheight = wheigth
+# min_wheight = wheigth
+
+# for _ in range(n - 1):
+#     wheigth = randint(1, 100)
+#     print(wheigth, end=' ')
+#     max_wheight = max(max_wheight, wheigth)
+#     min_wheight = min(min_wheight, wheigth)
+# print()
+# print(min_wheight, end=' ')
+# print(max_wheight, end=' ')
+
+
+        
