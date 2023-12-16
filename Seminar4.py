@@ -137,3 +137,16 @@
 # intersection = planty2.intersection(planty3)
 # list_intersection = list(intersection)
 # print(*sorted(list_intersection))
+
+#---------------------Задача2-------------------------------------------
+
+# arr = [5, 8, 6, 4, 9, 2, 7, 3]
+
+# max = 0
+# res = 0
+
+# for i in range(-1, len(arr) - 1):
+#     res = arr[i] + arr[i - 1] + arr[i + 1]
+#     if res > max:    
+#         max = res
+# print(max)
