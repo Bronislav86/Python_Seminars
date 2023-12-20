@@ -1,4 +1,4 @@
-#-----------Задача 39---------------------
+# -----------Задача 39---------------------
 
 # Даны два массива чисел. Требуется вывести те элементы
 # первого массива (в том порядке, в каком они идут в первом
@@ -21,7 +21,7 @@ from random import randint
 #     if el not in set_2:
 #          print(el, end=" ")
 
-#-----------------------------------Задача 41--------------------------------
+# -----------------------------------Задача 41--------------------------------
 
 # Дан массив, состоящий из целых чисел. Напишите
 # программу, которая в данном массиве определит
@@ -47,7 +47,7 @@ from random import randint
 #         count += 1
 # print(count)
 
-#---------------------Задача 43------------------------
+# ---------------------Задача 43------------------------
 
 # Дан список чисел. Посчитайте, сколько в нем пар
 # элементов, равных друг другу. Считается, что любые
@@ -69,13 +69,13 @@ from random import randint
 #             count += 1
 # print(count)
 
-#Вариант 2
+# Вариант 2
 
 # for i in range(size1 - 1):
 #         count += array1[i + 1:].count(array1[i])  # метод каунт счиатет сколько раз array[i] встречается в оставшемся списке - array[i + 1]
 # print(count)
 
-#--------------------------Задача 45-----------------------
+# --------------------------Задача 45-----------------------
 
 # Два различных натуральных числа n и m называются
 # дружественными, если сумма делителей числа n
@@ -107,22 +107,54 @@ from random import randint
 #     for num_2 in range(2, size):
 #         if div_sum(num_1) == num_2 and div_sum(num_2) == num_1 and num_1 < num_2:
 #             print(num_1, num_2)
-            
-#Вариант 2
 
-def div_sum(number):
-    sum_divs = 1
-    sq_num = number ** 0.5
-    if sq_num == int(sq_num):
-        sum_divs += sq_num
-    for div in range(2, int(number ** 0.5)):
-        if number % div == 0:
-            sum_divs += div + number // div
-    return sum_divs
+# Вариант 2
 
-size = int(input('Введите предельное число К: '))
+# def div_sum(number):
+#     sum_divs = 1
+#     sq_num = number ** 0.5
+#     if sq_num == int(sq_num):
+#         sum_divs += sq_num
+#     for div in range(2, int(number ** 0.5)):
+#         if number % div == 0:
+#             sum_divs += div + number // div
+#     return sum_divs
 
-for num_1 in range(2, size):
-    num_2 = div_sum(num_1)
-    if div_sum(num_2) == num_1 and num_1 < num_2:
-        print(num_1, num_2)
+# size = int(input('Введите предельное число К: '))
+
+# for num_1 in range(2, size):
+#     num_2 = div_sum(num_1)
+#     if div_sum(num_2) == num_1 and num_1 < num_2:
+#         print(num_1, num_2)
+
+# ----------------------ДЗ-----------------------------
+
+# Задача 1
+
+# list_1 = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
+# min_number = 0
+# max_number = 10
+
+# # Введите ваше решение ниже
+# def find_numbers(list_1, min_number, max_number):
+#     for i in range(len(list_1)):
+#         if min_number <= list_1[i] <= max_number:
+#             print (i)
+
+# find_numbers(list_1, min_number, max_number)
+
+# Задача 2
+
+# a1 = 2
+# d = 3
+# n = 4
+
+# # Введите ваше решение ниже
+# list_1 = [n]
+
+# for i in range(n):
+#     if i == 0:
+#         print(a1)
+#     else:
+#         list_1.append(a1 + ((i + 1) - 1) * d)
+#         print(list_1[i])
