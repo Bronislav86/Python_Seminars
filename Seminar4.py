@@ -78,7 +78,7 @@
 # print()
 # print(len(set_words))
 
-# print(len(set(text.lower().split())))
+#print(len(set(text.lower().split())))
 
 #---------------------------------Задача 29--------------------------------------------------
 
