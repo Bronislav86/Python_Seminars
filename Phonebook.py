@@ -31,12 +31,12 @@
 # 6. Копирование данных из одного файла в другой:
 #     - добавить вариант копирования в меню     ++++
 #     - вывести отформатированный список контактов  ++++
-#     - запросить у пользователя данные для копирования   
-#     - открыть исходный файл в режиме чтения(r)
-#     - сохранить данные в переменную
-#     - открыть новый файл в который будем копировать
-#     - осуществить копирование
-#     - вывести данныеб хранящиеся в новом файле
+#     - запросить у пользователя данные для копирования   ++++
+#     - открыть исходный файл в режиме чтения(r)    ++++
+#     - сохранить данные в переменную           ++++
+#     - открыть новый файл в который будем копировать   ++++
+#     - осуществить копирование                 ++++
+#     - вывести данные хранящиеся в новом файле    ++++
     
 def input_name():
     return input('Введите имя: ')
@@ -67,11 +67,17 @@ def add_contact(contact):
         file.write(contact)
 
 def show_info():
-    with open('phonebook.txt', 'r', encoding='UTF-8') as file:
+    with open('Phonebook.txt', 'r', encoding='UTF-8') as file:
         contacts_list = file.read().rstrip().split('\n\n')
         for contact in contacts_list:
             print(contact)
         #print(file.read().rstrip())
+        
+def show_favorites():
+    with open('Favorite_contacts.txt', 'r', encoding='UTF-8') as file:
+        contacts_list = file.read().rstrip().split('\n\n')
+        for contact in contacts_list:
+            print(contact)
 
 def search_contact():
     print(
@@ -98,7 +104,7 @@ def search_contact():
         if search in contact_lst[index_var]:
             print(contact_str)
             
-def create_favorites_contact_list():
+def create_favorite_contacts_list():
     with open('phonebook.txt', 'r', encoding='UTF-8') as file:
         contacts_list = file.read().rstrip().split('\n\n')
         for contact in enumerate(contacts_list, 1):
@@ -108,20 +114,22 @@ def create_favorites_contact_list():
     contact_number = int(input())
     tuple_contacts_list = enumerate(contacts_list, 1)
 
+    
+    while contact_number not in range(1, len(contacts_list) + 1):
+        print('Такого контакта не существует')
+        contact_number = int(input('Выберите контакт из списка: '))
+        
     for cur_contact in tuple_contacts_list:
-        if contact_number > len(contacts_list):
-            print('Такого контакта не существует')
-            contact_number = int(input('Выберите контакт из списка: '))
         if int(cur_contact[0]) == contact_number:
-            with open('favorites_contacts.txt', 'a', encoding='UTF-8') as file:
+            with open('Favorite_contacts.txt', 'a', encoding='UTF-8') as file:
                 file.write(f'{cur_contact[1]}\n\n')
             
-    print()
-    print(f'Контакт:\n\n{cur_contact[1]}\n\nуспешно добавлен в Избранные.')
-    print()
-    print('Список контаков Избранные:\n')
+        print()
+        print(f'Контакт:\n\n{cur_contact[1]}\n\nуспешно добавлен в Избранные.')
+        print()
+        print('Список контаков Избранные:\n')
     
-    with open('favorites_contacts.txt', 'r', encoding='UTF-8') as file:
+    with open('Favorite_contacts.txt', 'r', encoding='UTF-8') as file:
         fav_contacts_list = file.read().rstrip().split('\n\n')
         for contact in fav_contacts_list:
             print(contact)
@@ -131,17 +139,18 @@ def interface():
         pass
     
     command = '-1'
-    while command != '5':
+    while command != '6':
         print('Возможные варианты взаимодействия:\n'
               '1. Добавить контакт\n'
-              '2. Вывести на экран\n'
-              '3. Поиск контакта\n'
-              '4. Добавить контакт в Избранные\n'
-              '5. Выход из программы')
+              '2. Показать список контактов\n'
+              '3. Показать список Избранные\n'
+              '4. Поиск контакта\n'
+              '5. Добавить контакт в Избранные\n'
+              '6. Выход из программы')
 
         command = input('Введите номер действия: ')
 
-        while command not in ('1', '2', '3', '4', '5'):
+        while command not in ('1', '2', '3', '4', '5', '6'):
             print('Некорректные данные, нужно ввести число комманды')
             command = input('Введите номер действия: ')
 
@@ -151,12 +160,12 @@ def interface():
             case '2':
                 show_info()
             case '3':
-                search_contact()
+                show_favorites()
             case '4':
-                create_favorites_contact_list()
+                search_contact()
             case '5':
+                create_favorite_contacts_list()
+            case '6':
                 print('Всего хорошего!')
 
 interface()
-
-# Дописать в меню вывод списка избранных  контактов!

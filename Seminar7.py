@@ -6,11 +6,11 @@
 
 # #--------------------------------------------------------------------
 
-my_list = [1,2,34,5,7,8,90,0,3,67,89,35,2]
+# my_list = [1,2,34,5,7,8,90,0,3,67,89,35,2]
 
 
-res_list = list(filter(lambda x: x % 2 == 0, my_list))
-print(res_list)
+# res_list = list(filter(lambda x: x % 2 == 0, my_list))
+# print(res_list)
 
 # for cur_orbit in res_list:
 #     print(cur_orbit, end=' ')
@@ -109,15 +109,15 @@ import math
 #Вариант2
 
 
-def find_farther_orbit(list_of_orbits):
-    filter_orbits = list(filter(lambda cur_orbit: cur_orbit[0] != cur_orbit[1], list_of_orbits))
-    tuple_s = list(map(lambda cur_orbit: cur_orbit[0] * cur_orbit[1], filter_orbits))
-    max_s = max(tuple_s)
-    i_max_s = tuple_s.index(max_s)
-    return filter_orbits[i_max_s]
+# def find_farther_orbit(list_of_orbits):
+#     filter_orbits = list(filter(lambda cur_orbit: cur_orbit[0] != cur_orbit[1], list_of_orbits))
+#     tuple_s = list(map(lambda cur_orbit: cur_orbit[0] * cur_orbit[1], filter_orbits))
+#     max_s = max(tuple_s)
+#     i_max_s = tuple_s.index(max_s)
+#     return filter_orbits[i_max_s]
 
-orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
-print(find_farther_orbit(orbits))
+# orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
+# print(find_farther_orbit(orbits))
 
 # ----------------------Задача 52----------------------------
 
@@ -312,29 +312,20 @@ print(find_farther_orbit(orbits))
 # Если строк меньше двух, выдайте текст
 # ОШИБКА! Размерности таблицы должны быть больше 2!
 
-# def print_operation_table(operation, num_rows, num_columns):
+# def print_operation_table(operation, num_rows=9, num_columns=9):
 #     if num_rows <= 2 or num_columns <= 2:
-#         return 'ОШИБКА! Размерности таблицы должны быть больше 2!'
-#     else:
-#         # list_1 = []
-#         # for k in range(num_columns):
-#         #     list_1.append(k + 1)
-#         # print(*list_1)
-#         print(*range(1, num_columns + 1))
-        
-#         for row in range(1, num_rows + 1):
-#             res=()
-#             for col in range(1, num_columns+1):
-#                 if col == 1:
-#                     print(row, end=' ')
-#                 elif row == 1:
-#                     print(col, end=' ')
-#                 else:
-#                     if col == num_columns:
-#                         print(operation(row, col), end='')
-#                     else:
-#                         print(operation(row, col), end=" ")
-#         print()
+#         return print('ОШИБКА! Размерности таблицы должны быть больше 2!')
+#     else:        
+#         for k in range(1, num_rows+1):
+#             if k == num_rows:
+#                 print (k, end='')
+#             else:
+#                 print(k,'', end='')
+#         for row in range(2, num_rows + 1):
+#             print()
+#             print(row, end='')
+#             for col in range(2, num_columns + 1):
+#                 print('',operation(row, col), end='')
     
-# print_operation_table(lambda x, y: x * y, 1, 3)
+# print_operation_table(lambda x, y: x * y)
 
