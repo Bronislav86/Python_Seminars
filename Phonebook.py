@@ -107,11 +107,10 @@ def search_contact():
 def create_favorite_contacts_list():
     with open('phonebook.txt', 'r', encoding='UTF-8') as file:
         contacts_list = file.read().rstrip().split('\n\n')
-        for contact in enumerate(contacts_list, 1):
-            print(*contact)
+    for contact in enumerate(contacts_list, 1):
+        print(*contact)
 
-    print('Выберите номер контакта для копирования: ', end='')
-    contact_number = int(input())
+    contact_number = int(input('Выберите номер контакта для копирования: '))
     tuple_contacts_list = enumerate(contacts_list, 1)
 
     

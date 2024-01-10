@@ -106,7 +106,7 @@ import math
 #             index = cur_orbit
 # print(*index)
 
-#Вариант2
+# Вариант2
 
 
 # def find_farther_orbit(list_of_orbits):
@@ -278,7 +278,6 @@ import math
 # print(f'{my_list_5 =}')
 
 
-
 # q,*w, e = (11, 22, 33, 44, 55)
 # print(q)
 # print(w)
@@ -298,9 +297,9 @@ import math
 # for q,w,*e in my_list:
 #     print(q,w,e, sep=' -\\- ')
 
-#--------------------ДЗ------------------------------
+# --------------------ДЗ------------------------------
 
-#Задача
+# Задача
 
 # Напишите функцию print_operation_table(operation, num_rows, num_columns),
 # которая принимает в качестве аргумента функцию, вычисляющую элемент по номеру строки и столбца.
@@ -315,7 +314,7 @@ import math
 # def print_operation_table(operation, num_rows=9, num_columns=9):
 #     if num_rows <= 2 or num_columns <= 2:
 #         return print('ОШИБКА! Размерности таблицы должны быть больше 2!')
-#     else:        
+#     else:
 #         for k in range(1, num_rows+1):
 #             if k == num_rows:
 #                 print (k, end='')
@@ -326,6 +325,65 @@ import math
 #             print(row, end='')
 #             for col in range(2, num_columns + 1):
 #                 print('',operation(row, col), end='')
-    
+
 # print_operation_table(lambda x, y: x * y)
 
+# Задача 2 Винни Пух
+
+# stroka = 'пара-ра-рам рам-пам-папам па-ра-па-дам'  # 1 +
+
+# stroka = 'по-русски говорят' #2 +
+
+# stroka = 'мо-локо и мёд' #3 +
+
+# stroka = "как ве-тер сме-ёт лис-ти"  # 4 +
+
+# stroka = "за-гад-ка-ра-свет-ка-ра-газ-да-не-на-ма-ли-ва-ла"  # 5 + "Количество фраз должно быть больше одной!"
+
+# stroka = "со-лнце-гре-ет ве-сной"  # 6 +
+
+# stroka = 'Пух' #7 - "Количество фраз должно быть больше одной!"
+
+
+# vowels = "ауоыиэяюёе"
+# split_str = stroka.split()
+# sum_vowels = []
+
+
+# def rifma(list_1):
+#     res_sum_vowels = []
+#     for i in range(-1, (len(sum_vowels) - 1)):
+#         if sum_vowels[i] == sum_vowels[i + 1]:
+#             res_sum_vowels.append(True)
+#         else:
+#             res_sum_vowels.append(False)
+#     return res_sum_vowels
+
+
+# for phrase in split_str:
+#     sum_vowels.append(int(len(list(filter(lambda letter: letter in vowels, phrase)))))
+
+# if len(split_str) < 2:
+#     print("Количество фраз должно быть больше одной!")
+# elif all(rifma(sum_vowels)) is True:
+#     print("Парам пам-пам")
+# else:
+#     print("Пам парам")
+
+
+#Эталонное решение
+
+# vowels = ['а', 'е', 'ё', 'и', 'й', 'о', 'у', 'ы', 'э', 'ю', 'я']
+# phrases = stroka.split()
+# if len(phrases) < 2:
+#  print('Количество фраз должно быть больше одной!')
+# else:
+#  countVowels = []
+
+#  for i in phrases:
+#   countVowels.append(len([x for x in i if x.lower() in vowels]))
+
+#  if countVowels.count(countVowels[0]) == len(countVowels):
+#   print('Парам пам-пам')
+#  else:
+#   print('Пам парам')
